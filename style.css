@@ -1,0 +1,17 @@
+/* Salon / Beauty — Color overrides only. All structure in _shared/ */
+@import url('css/base.css');
+@import url('css/components.css');
+
+:root {
+  --clr-primary:    #7c3aed;
+  --clr-primary-dk: #5b27c4;
+  --clr-accent:     #f9a8d4;
+}
+
+/* Light pink accent: dark text required */
+.btn-accent { color: var(--clr-gray-900); }
+
+/* Softer hero gradient for beauty vertical */
+.hero {
+  background: linear-gradient(155deg, #3b1a7a 0%, var(--clr-primary) 60%, #9d4fd4 100%);
+}
