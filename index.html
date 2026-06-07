@@ -10,7 +10,7 @@
   <meta property="og:type"        content="website">
   <meta property="og:title"       content="[BUSINESS_NAME] | Hair Salon &amp; Spa · [CITY], [STATE]">
   <meta property="og:description" content="Full-service hair, nails, and skincare in Cape Coral, FL. Book online 24/7. Walk-ins welcome.">
-  <meta property="og:url"         content="https://www.blissbeautycapecoral.com">
+  <meta property="og:url"         content="[OG_URL]">
   <meta property="og:site_name"   content="[BUSINESS_NAME]">
 
   <!-- Google Fonts: Inter -->
@@ -50,7 +50,7 @@
 ═══════════════════════════════════════════ -->
 <header class="site-header">
   <div class="container header-inner">
-    <a href="#" class="logo">Bliss<span>Beauty</span></a>
+    <a href="#" class="logo">[BUSINESS_NAME]</a>
 
     <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true">
     <nav class="nav-menu" aria-label="Main navigation">
@@ -154,7 +154,7 @@
     <div class="about-text">
       <span class="section-label">About Us</span>
       <h2 class="section-title">Where Cape Coral Comes to Feel Beautiful</h2>
-      <p>Bliss Beauty Studio opened in Cape Coral in 2018 with one goal: create a space where every client leaves feeling more confident and cared for. Our licensed team stays current on the latest techniques and trends while never forgetting the classics.</p>
+      <p>[BUSINESS_NAME] opened in Cape Coral in [YEAR_FOUNDED] with one goal: create a space where every client leaves feeling more confident and cared for. Our licensed team stays current on the latest techniques and trends while never forgetting the classics.</p>
       <p>We use premium professional products, keep our space impeccably clean, and take time to really listen to what you want. No rushing, no guessing — just beautiful results and a truly relaxing experience.</p>
       <p class="brand-line">Proud [BRAND_1] &amp; [BRAND_2] salon — professional-grade products for stunning, lasting results.</p>
     </div>
@@ -284,10 +284,12 @@
       <a href="#" class="footer-logo">[BUSINESS_NAME]</a>
       <p class="footer-tagline">Look Good. Feel Great. Love Yourself.</p>
       <p>Licensed Beauty Professionals · Cape Coral, FL</p>
+      <p class="license-line"><span class="license">[LICENSE_NUMBER]</span></p>
       <div class="footer-contact">
         <a href="tel:[PHONE]">[PHONE]</a>
         <a href="mailto:[EMAIL]">[EMAIL]</a>
-        <span>[ADDRESS], [CITY], [STATE] [ZIP]</span>
+        <span class="addr-street">[ADDRESS]</span>
+          <span class="addr-city">[CITY], [STATE] [ZIP]</span>
       </div>
       <span class="gift-card-badge">🎁 Gift Cards Available</span>
     </div>
@@ -316,7 +318,10 @@
       <p>Friday: 9 AM – 6 PM</p>
       <p>Saturday: 9 AM – 5 PM</p>
       <p>Sunday: Closed</p>
-      <p class="footer-address">[ADDRESS]<br>[CITY], [STATE] [ZIP]</p>
+      <p class="footer-address">
+        <span class="addr-street">[ADDRESS]</span>
+        <span class="addr-city">[CITY], [STATE] [ZIP]</span>
+      </p>
     </div>
   </div>
   <div class="footer-bottom">
@@ -326,6 +331,20 @@
   </div>
 </footer>
 
-<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  document.querySelectorAll('.license').forEach(el => {
+    if (!el.textContent.trim()) el.style.display = 'none';
+  });
+
+  document.querySelectorAll('.addr-street').forEach(el => {
+    if (!el.textContent.trim()) el.style.display = 'none';
+  });
+
+  document.querySelectorAll('.since-year').forEach(el => {
+    if (!el.textContent.trim()) el.closest('.since').remove();
+  });
+</script>
 </body>
 </html>
