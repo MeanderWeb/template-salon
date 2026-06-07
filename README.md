@@ -17,5 +17,6 @@ Deploy to Cloudflare Pages.
 - [PRICE_START]
 - [BRAND_1], [BRAND_2]
 - [BOOKING_URL] (remove button if N/A)
-- [MAPS_EMBED_URL] — replace with:
-  https://maps.google.com/maps?q=[ADDRESS]+[CITY]+[STATE]&output=embed
+- [MAPS_EMBED_URL] — Google Maps Embed API URL, built dynamically by
+  MockupGenerator from the client's address + a configured API key:
+  https://www.google.com/maps/embed/v1/place?key=API_KEY&q=[ADDRESS]+[CITY]+[STATE]+[ZIP]&zoom=14
